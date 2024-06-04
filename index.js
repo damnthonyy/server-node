@@ -6,6 +6,8 @@ import { fileURLToPath } from "url";
 
 // create an express app
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //define url for my page
 const __filename = fileURLToPath(import.meta.url); //// get the resolved path to the file
@@ -18,6 +20,13 @@ app.get('/', (req, res) => {
     // send html files as a response
     res.sendfile(path.join(__dirname, 'page.html'));
 });
+
+// get data from
+app.post('/login.html', (req, res) => {
+    console.log("Donnée reçue :", req.body);
+    res.send("Formulaire reçu et données loggées en console.");
+});
+
 
 
 // start the server
