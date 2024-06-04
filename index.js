@@ -18,13 +18,16 @@ console.log(__dirname);
 app.get('/', (req, res) => {
 
     // send html files as a response
-    res.sendfile(path.join(__dirname, 'page.html'));
+    res.sendFile(path.join(__dirname, 'page.html'));
 });
 
 // get data from
 app.post('/login.html', (req, res) => {
+    setTimeout(() => {
+        res.send("Formulaire reçu et données loggées en console.");
+    }, "2000");
     console.log("Donnée reçue :", req.body);
-    res.send("Formulaire reçu et données loggées en console.");
+
 });
 
 
