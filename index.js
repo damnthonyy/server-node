@@ -24,13 +24,12 @@ app.get('/', (req, res) => {
 // get data from
 app.post('/login.html', (req, res) => {
     setTimeout(() => {
-        res.send("Formulaire reçu et données loggées en console.");
+        res.send("donnée envoyée");
     }, "2000");
     console.log("Donnée reçue :", req.body);
 
+
 });
-
-
 
 // start the server
 
